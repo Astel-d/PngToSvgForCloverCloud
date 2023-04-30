@@ -182,12 +182,12 @@ def rgba_image_to_svg_pixels(im, opaque=None):
     s.write("""</svg>\n""")
     return s.getvalue()
 
-def main():
-    image = Image.open('examples/angular.png').convert('RGBA')
+def main(pict_name):
+    image = Image.open(pict_name).convert('RGBA')
     svg_image = rgba_image_to_svg_contiguous(image)
     #svg_image = rgba_image_to_svg_pixels(image)
-    with open("examples/angular.svg", "w") as text_file:
-        text_file.write(svg_image)
+    return svg_image
+
 
 if __name__ == '__main__':
     main()
